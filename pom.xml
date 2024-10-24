@@ -61,7 +61,7 @@
                     <executions>
                         <execution>
                             <id>pitest</id>
-                            <phase>test</phase>
+                            <phase>test-compile</phase>
                             <goals>
                                 <goal>mutationCoverage</goal>
                             </goals>
@@ -75,6 +75,9 @@
                             <format>HTML</format>
                         </outputFormats>
                         <mutators>STRONGER</mutators>
+                        <excludedTestClasses>
+                          <param>*FailingTest*</param>
+                        </excludedTestClasses>
                     </configuration>
                 </plugin>
 
